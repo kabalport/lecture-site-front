@@ -22,18 +22,9 @@ yarn add @reduxjs/toolkit react-redux @types/react-redux
 ```
 
 ## 아이콘설정
+- Material icons 설치
+- Material-UI icon 설치 
 ```shell
-Material icons 설치
-//npm 
-npm install @material-ui/core 
-
-//yarn 
 yarn add @material-ui/core
- Material-UI icon 설치
-//npm 
-npm install @material-ui/icons 
-
-//yarn 
 yarn add @material-ui/icons
-
 ```
