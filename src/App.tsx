@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './layout/Header';
+import MenuBar from './layout/MenuBar/MenuBar';
+import Footer from './layout/Footer';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+
+import { createMuiTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createMuiTheme({
+    typography: {
+        fontFamily: '"Roboto", "Noto Sans KR", sans-serif',
+
+    },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ThemeProvider theme={theme}>
+
+      <Router>
+        <Header />
+        <MenuBar />
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+
+          <Footer />
+      </Router>
+      </ThemeProvider>
   );
 }
 
